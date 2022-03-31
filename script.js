@@ -1,60 +1,83 @@
 const quizContainer = document.getElementById('quiz');
 const resultsContainer = document.getElementById('results');
 const submitButton = document.getElementById('submit');
+let index = 0;
 
 const myQuestions = [{
     question: "What does JSON stand for?",
-    answers: {
-        a: "Javascript Object Notation",
-        b: "Java Scan Observer Node",
-        c: "Javascript SVG One NaN",
-        d: "Java Sugar On Nice"
-    },
-    correctAnswer: "a"
+    answers: [
+        "Javascript Object Notation",
+        "Java Scan Observer Node",
+        "Javascript SVG One NaN",
+        "Java Sugar On Nice"
+    ],
+    correctAnswer: "Javascript Object Notationa"
 },
-    {
-        question: "Which one of these can style HTML?",
-        answers: {
-            a: "Node.js",
-            b: "JSON",
-            c: "CSS",
-            d: "API" 
-        },
-        correctAnswer:  "c"
+{
+    question: "Which one of these can style HTML?",
+    answers: [
+        "Node.js",
+        "JSON",
+        "CSS",
+        "API"
+    ],
+    correctAnswer: "CSS"
 
-    },
-    {
-        question: "What does git pull do in the terminal?",
-        answers: {
-            a: "resets computer",
-            b: "creates new account on Github",
-            c: "pulls code from Github",
-            d: "updates new code Github"
-        }
-    }
+},
+{
+    question: "What does git pull do in the terminal?",
+    answers: [
+        "resets computer",
+        "creates new account on Github",
+        "pulls code from Github",
+        "updates new code Github"
+    ],
+    correctAnswer: "pulls code from Github"
+}
 ];
 
-function buildQuiz(){
-    const output = [];
+function buildQuiz() {
+    //const output = [];
+    var questionTitle = document.createElement('h2');
+    questionTitle.textContent = myQuestions[index].question;
+    quizContainer.append(questionTitle)
 
-    myQuestions.forEach(
-        (currentQuestion, questionNumber) => {
-            const answers = [];
+    console.log("answer array: ", myQuestions[index].answers)
 
-            for(letter in currentQuestion.answers){
-                answers.push(
-                    `<label>
-                    <input type="radio" name="question${questionNumber}" value="${letter}>
-                    ${letter} :
-                    ${currentQuestion.answers[letter]}
-                    </label>`
-                );
-            }
-        }
-    )
+    myQuestions[index].answers.forEach(
+        function(answer){
+            var answerElement = document.createElement('button');
+            answerElement.textContent = answer;
+            answerElement.onclick = checker;
+            quizContainer.append(answerElement);
+
+        })
+
+
+    // (currentQuestion, questionNumber) => {
+    //     const answers = [];
+
+    //     for (letter in currentQuestion.answers) {
+    //         answers.push(
+    //             `<label>
+    //             <input type="radio" name="question${questionNumber}" value="${letter}>
+    //             ${letter} :
+    //             ${currentQuestion.answers[letter]}
+    //             </label>`
+    //         );
+    //     }
+    // }
+
 }
 
-function showResults(){}
+function checker() {
+// use the proptery this
+if (this.innerText ===myQuestions[index].correctAnswer) {
+    
+}
+}
+
+function showResults() { }
 
 buildQuiz();
 
