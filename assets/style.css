@@ -1,3 +1,13 @@
-.body{
-    margin-left: center;
-}
+/* .body{
+    margin-left: center
+};
+ */
+
+ body {
+     background-image:url("download.jpg") ;
+     background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center center;
+    background-size: cover
+ }
+ 

@@ -54,21 +54,9 @@ function buildQuiz() {
         })
 
 
-    // (currentQuestion, questionNumber) => {
-    //     const answers = [];
-
-    //     for (letter in currentQuestion.answers) {
-    //         answers.push(
-    //             `<label>
-    //             <input type="radio" name="question${questionNumber}" value="${letter}>
-    //             ${letter} :
-    //             ${currentQuestion.answers[letter]}
-    //             </label>`
-    //         );
-    //     }
-    // }
 
 }
+console.dir(window.document);
 
 function checker() {
 // use the proptery this
@@ -82,3 +70,20 @@ function showResults() { }
 buildQuiz();
 
 submitButton.addEventListener('click', showResults);
+
+
+// Create variables to store the quiz questions
+
+// Use mouse-click events to start the quiz
+
+// Write for loops to cycle through quiz questions
+
+// Use key-press events to receive user input in the form of answers to quiz questions
+
+// Create a time limit for the game using time functions
+
+// Write conditional statements to determine wrong and right answers
+
+// Use client-side storage to store high scores
+
+// Use GitHub Pages to publish the page to the web
